@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://c8kww05s7ck70"]
+
+[ext_resource type="Script" uid="uid://c3q1qlb27tfb0" path="res://debug_panel/debug_panel.gd" id="1_73o1o"]
+
+[node name="DebugPanel" type="Control" unique_id=1398223107 node_paths=PackedStringArray("data_0", "data_1", "data_2", "data_3", "data_4", "data_5", "data_6", "data_7", "data_8")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_73o1o")
+data_0 = NodePath("ColorRect/VBoxContainer2/VBoxContainer/VBoxContainer/HBoxContainer/Label3")
+data_1 = NodePath("ColorRect/VBoxContainer2/VBoxContainer/VBoxContainer/HBoxContainer2/Label3")
+data_2 = NodePath("ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer/Label3")
+data_3 = NodePath("ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer3/Label3")
+data_4 = NodePath("ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer2/Label3")
+data_5 = NodePath("ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer4/Label3")
+data_6 = NodePath("ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer6/Label3")
+data_7 = NodePath("ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer5/Label3")
+data_8 = NodePath("ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer7/Label3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=334558134]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 333.0
+offset_bottom = 369.0
+color = Color(0.08627451, 0.08627451, 0.08627451, 0.4745098)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect" unique_id=1664761898]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.5
+offset_top = -117.5
+offset_right = 153.5
+offset_bottom = 117.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer2" unique_id=2043493912]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer" unique_id=1146781533]
+layout_mode = 2
+text = "game data"
+
+[node name="HSeparator" type="HSeparator" parent="ColorRect/VBoxContainer2/VBoxContainer" unique_id=1609759655]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer2/VBoxContainer" unique_id=1488598973]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1605563362]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=76849378]
+layout_mode = 2
+text = "frame rate"
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=784195973]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ":"
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1565715065]
+layout_mode = 2
+text = "value"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer2/VBoxContainer/VBoxContainer" unique_id=1994747809]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1170918971]
+layout_mode = 2
+text = "frame time"
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1466754138]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ":"
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=103977952]
+layout_mode = 2
+text = "value"
+
+[node name="HSeparator" type="HSeparator" parent="ColorRect/VBoxContainer2" unique_id=278564042]
+custom_minimum_size = Vector2(0, 13.095)
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="ColorRect/VBoxContainer2" unique_id=2041362094]
+custom_minimum_size = Vector2(0, 13.095)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/VBoxContainer2" unique_id=1823033471]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2" unique_id=1561801394]
+layout_mode = 2
+text = "player data"
+
+[node name="HSeparator" type="HSeparator" parent="ColorRect/VBoxContainer2/VBoxContainer2" unique_id=1443942433]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer2/VBoxContainer2" unique_id=136451274]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer" unique_id=575203163]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer" unique_id=453357076]
+layout_mode = 2
+text = "player pos"
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1541930240]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ":"
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1368047243]
+layout_mode = 2
+text = "value"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer" unique_id=1966386115]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer3" unique_id=1721338932]
+layout_mode = 2
+text = "player velocity"
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer3" unique_id=1480644321]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ":"
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer3" unique_id=1952689532]
+layout_mode = 2
+text = "value"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer" unique_id=1671234978]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=1671877395]
+layout_mode = 2
+text = "is dashing"
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=452674508]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ":"
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer2" unique_id=1285420672]
+layout_mode = 2
+text = "value"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer" unique_id=288231939]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer4" unique_id=506791345]
+layout_mode = 2
+text = "used dashs"
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer4" unique_id=1187186053]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ":"
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer4" unique_id=326863105]
+layout_mode = 2
+text = "value"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer" unique_id=593600932]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer6" unique_id=672468902]
+layout_mode = 2
+text = "dash charges"
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer6" unique_id=407292479]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ":"
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer6" unique_id=2106340433]
+layout_mode = 2
+text = "value"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer" unique_id=498634743]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer5" unique_id=1733366730]
+layout_mode = 2
+text = "dash coutdown"
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer5" unique_id=1350566619]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ":"
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer5" unique_id=512890324]
+layout_mode = 2
+text = "value"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer" unique_id=893941366]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer7" unique_id=259408821]
+layout_mode = 2
+text = "dash leftover time"
+
+[node name="Label2" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer7" unique_id=241517263]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ":"
+
+[node name="Label3" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer7" unique_id=196086795]
+layout_mode = 2
+text = "value"

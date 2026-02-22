@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://b5uc7pfqspntv"]
+
+[ext_resource type="Script" uid="uid://c24kfbri3xpjy" path="res://player/player.gd" id="1_1l1n4"]
+[ext_resource type="Texture2D" uid="uid://co3n7k6sa3cy1" path="res://assets/character.png" id="1_yf0e5"]
+[ext_resource type="Texture2D" uid="uid://ifny6fsbtsoq" path="res://assets/ball_fx.png" id="3_hx151"]
+[ext_resource type="Script" uid="uid://dy3o46ywsmkab" path="res://player/stats.gd" id="3_ugqs2"]
+[ext_resource type="Script" uid="uid://f8kbi3kieleg" path="res://player/hitbox.gd" id="5_0rvpn"]
+
+[sub_resource type="Curve" id="Curve_0rvpn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.09727633), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_o6jyn"]
+curve = SubResource("Curve_0rvpn")
+
+[sub_resource type="Curve" id="Curve_hx151"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0rvpn"]
+curve = SubResource("Curve_hx151")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wy5t8"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(11.075, 14.995, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 0.39999998
+scale_max = 0.95
+scale_over_velocity_curve = SubResource("CurveTexture_0rvpn")
+alpha_curve = SubResource("CurveTexture_o6jyn")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hx151"]
+radius = 7.9998875
+height = 23.99966
+
+[node name="Player" type="CharacterBody2D" unique_id=1238751408]
+position = Vector2(1, 0)
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_1l1n4")
+
+[node name="VFX" type="Node2D" parent="." unique_id=548887294]
+
+[node name="DashParticles" type="GPUParticles2D" parent="VFX" unique_id=1570169608]
+emitting = false
+amount = 26
+texture = ExtResource("3_hx151")
+one_shot = true
+speed_scale = 6.85
+process_material = SubResource("ParticleProcessMaterial_wy5t8")
+
+[node name="Body" type="Node2D" parent="." unique_id=1941541804]
+
+[node name="Sprite" type="Sprite2D" parent="Body" unique_id=2063626480]
+texture = ExtResource("1_yf0e5")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1698034466]
+position_smoothing_enabled = true
+
+[node name="Stats" type="Node" parent="." unique_id=684324900]
+script = ExtResource("3_ugqs2")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1541572880]
+position = Vector2(-1.1920929e-07, 8)
+rotation = -1.5654644
+shape = SubResource("CapsuleShape2D_hx151")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1618641056]
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("5_0rvpn")
+
+[node name="Collision" type="CollisionShape2D" parent="Hitbox" unique_id=890090153]
+position = Vector2(-1.1920929e-07, 8)
+rotation = -1.5654644
+shape = SubResource("CapsuleShape2D_hx151")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

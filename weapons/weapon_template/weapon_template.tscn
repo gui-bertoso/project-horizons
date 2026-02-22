@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://clamhsh6htufg"]
+
+[ext_resource type="Script" uid="uid://b1rrdqqxtvlx5" path="res://weapons/weapon_template/weapon_template.gd" id="1_tdwu2"]
+
+[node name="WeaponTemplate" type="Node2D" unique_id=325224999]
+script = ExtResource("1_tdwu2")
+
+[node name="Body" type="Node2D" parent="." unique_id=1258666948]
+
+[node name="Sprite" type="Sprite2D" parent="Body" unique_id=55184305]
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=173972582]
+
+[node name="Collision" type="CollisionShape2D" parent="AttackArea" unique_id=1684798246]

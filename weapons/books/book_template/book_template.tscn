@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cm2n4dr0cj2y7"]
+
+[ext_resource type="PackedScene" uid="uid://clamhsh6htufg" path="res://weapons/weapon_template/weapon_template.tscn" id="1_u75pd"]
+
+[node name="BookTemplate" unique_id=325224999 instance=ExtResource("1_u75pd")]
