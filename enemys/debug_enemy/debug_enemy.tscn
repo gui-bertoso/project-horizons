@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cfauxfu2ss534"]
+
+[ext_resource type="PackedScene" uid="uid://c50y1kr3jjmvj" path="res://enemys/enemy_template/enemy_template.tscn" id="1_0boax"]
+[ext_resource type="Script" uid="uid://bk1dxwlb55wpb" path="res://enemys/debug_enemy/debug_enemy.gd" id="2_a414r"]
+[ext_resource type="Texture2D" uid="uid://ru5t4sj7wgmg" path="res://assets/debug_enemy.png" id="3_u403t"]
+
+[node name="DebugEnemy" unique_id=821678605 instance=ExtResource("1_0boax")]
+script = ExtResource("2_a414r")
+
+[node name="Sprite" parent="Body" parent_id_path=PackedInt32Array(63969425) index="0" unique_id=1262303832]
+texture = ExtResource("3_u403t")

@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://c34mpgxf560mb"]
+
+[ext_resource type="PackedScene" uid="uid://c50y1kr3jjmvj" path="res://enemys/enemy_template/enemy_template.tscn" id="1_i8whe"]
+[ext_resource type="Texture2D" uid="uid://7dnpn7qx3iny" path="res://assets/test_dummy.png" id="2_hjw6e"]
+[ext_resource type="Script" uid="uid://o3s45c3mn04g" path="res://enemys/test_dummy/test_dummy.gd" id="2_xyspl"]
+
+[sub_resource type="Animation" id="Animation_hjw6e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xyspl"]
+resource_name = "hit"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_vhheo"]
+resource_name = "idle"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cp4qk"]
+_data = {
+&"RESET": SubResource("Animation_hjw6e"),
+&"hit": SubResource("Animation_xyspl"),
+&"idle": SubResource("Animation_vhheo")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xyspl"]
+radius = 16.0
+height = 40.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vhheo"]
+radius = 5.0
+height = 18.0
+
+[node name="TestDummy" unique_id=821678605 instance=ExtResource("1_i8whe")]
+script = ExtResource("2_xyspl")
+
+[node name="Sprite" parent="Body" parent_id_path=PackedInt32Array(63969425) index="0" unique_id=1262303832]
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("2_hjw6e")
+hframes = 5
+
+[node name="AnimationPlayer" parent="Body" parent_id_path=PackedInt32Array(63969425) index="1" unique_id=1690232983]
+libraries/ = SubResource("AnimationLibrary_cp4qk")
+
+[node name="Collision" parent="Hitbox" parent_id_path=PackedInt32Array(71602691) index="0" unique_id=2108929496]
+position = Vector2(1, -5)
+shape = SubResource("CapsuleShape2D_xyspl")
+
+[node name="Collision" parent="." index="3" unique_id=760924093]
+position = Vector2(1, 22)
+shape = SubResource("CapsuleShape2D_vhheo")

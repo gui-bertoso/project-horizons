@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c50y1kr3jjmvj"]
+
+[ext_resource type="Script" uid="uid://byea0gu0x48yd" path="res://enemys/enemy_template/enemy_template.gd" id="1_m66ap"]
+[ext_resource type="Script" uid="uid://deueavivdsq8j" path="res://enemys/enemy_template/attack_area.gd" id="2_c72bf"]
+
+[node name="EnemyTemplate" type="CharacterBody2D" unique_id=821678605]
+collision_layer = 8
+script = ExtResource("1_m66ap")
+
+[node name="Body" type="Node2D" parent="." unique_id=63969425]
+
+[node name="Sprite" type="Sprite2D" parent="Body" unique_id=1262303832]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Body" unique_id=1690232983]
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1959229298]
+script = ExtResource("2_c72bf")
+
+[node name="Collision" type="CollisionShape2D" parent="AttackArea" unique_id=200143248]
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=71602691]
+
+[node name="Collision" type="CollisionShape2D" parent="Hitbox" unique_id=2108929496]
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=760924093]
+position = Vector2(1, 16)

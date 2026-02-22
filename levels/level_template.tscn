@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://tpsdqxt44vcx"]
+
+[ext_resource type="TileSet" uid="uid://bk2kb7j3ntec1" path="res://tilesets/map_tileset.tres" id="1_gup2b"]
+[ext_resource type="PackedScene" uid="uid://bse4giug6ruaa" path="res://hud/hud.tscn" id="2_vgt4e"]
+
+[node name="LevelTemplate" type="Node2D" unique_id=2137556351]
+
+[node name="Scenario" type="Node2D" parent="." unique_id=2065735332]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Scenario" unique_id=1235820621]
+tile_set = ExtResource("1_gup2b")
+rendering_quadrant_size = 32
+
+[node name="HUD" parent="." unique_id=1875233738 instance=ExtResource("2_vgt4e")]
