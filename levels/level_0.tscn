@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://dgk7wj6inaviq" path="res://assets/debug_rod.png" id="11_fv0x7"]
 [ext_resource type="Texture2D" uid="uid://lhm2r1t5l6oy" path="res://assets/debug_spell.png" id="12_owf05"]
 [ext_resource type="Texture2D" uid="uid://lw2jsq3b8rfp" path="res://assets/debug_sword.png" id="13_uuq13"]
+[ext_resource type="PackedScene" uid="uid://ksj8tmv6d87i" path="res://weapons/physic_item/physic_item.tscn" id="14_axdoh"]
+[ext_resource type="Resource" uid="uid://bm20lm2p80jt7" path="res://items/stick.tres" id="15_as6hq"]
 
 [node name="Level0" unique_id=2137556351 instance=ExtResource("1_eus5j")]
 
@@ -128,3 +130,16 @@ offset_top = 14.0
 offset_right = 23.0
 offset_bottom = 37.0
 text = "melle"
+
+[node name="PhysicItem" parent="." index="16" unique_id=858406816 instance=ExtResource("14_axdoh")]
+position = Vector2(490, 360)
+_item = ExtResource("15_as6hq")
+
+[node name="PhysicItem2" parent="." index="17" unique_id=1481639236 instance=ExtResource("14_axdoh")]
+position = Vector2(587, 354)
+
+[node name="PhysicItem3" parent="." index="18" unique_id=1817549115 instance=ExtResource("14_axdoh")]
+position = Vector2(688, 350)
+
+[node name="PhysicItem4" parent="." index="19" unique_id=1104345735 instance=ExtResource("14_axdoh")]
+position = Vector2(794, 349)

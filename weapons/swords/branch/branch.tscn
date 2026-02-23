@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://bsuv2nu7dvcr8"]
+
+[ext_resource type="PackedScene" uid="uid://b3wp8wnprj4en" path="res://weapons/swords/sword_template/sword_template.tscn" id="1_8b6m5"]
+[ext_resource type="Texture2D" uid="uid://cgre8h5v8nem5" path="res://assets/branch.png" id="2_dcw2m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqs7f"]
+size = Vector2(5.882352, 25.294115)
+
+[sub_resource type="Animation" id="Animation_dcw2m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 2.0000002)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.7, 1.7)]
+}
+
+[sub_resource type="Animation" id="Animation_y4ku2"]
+resource_name = "attack"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 2.0000002), Vector2(-10.000001, -8.000001), Vector2(7.82, 0.52), Vector2(0, 2.0000002)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.937034, 1.2740904, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.7, 1.7), Vector2(1.7, 1.7), Vector2(1.85, 1.85), Vector2(1.7, 1.7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dcw2m"]
+_data = {
+&"RESET": SubResource("Animation_dcw2m"),
+&"attack": SubResource("Animation_y4ku2")
+}
+
+[node name="WeaponTemplate" unique_id=325224999 instance=ExtResource("1_8b6m5")]
+
+[node name="Sprite" parent="." index="0" unique_id=55184305]
+position = Vector2(0, 2.0000002)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("2_dcw2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AttackArea" parent_id_path=PackedInt32Array(1122916117) index="0" unique_id=15209517]
+position = Vector2(-0.58823526, -17.64706)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_jqs7f")
+
+[node name="Animation" parent="." index="1" unique_id=483748257]
+libraries/ = SubResource("AnimationLibrary_dcw2m")

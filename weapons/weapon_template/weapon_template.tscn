@@ -5,10 +5,6 @@
 [node name="WeaponTemplate" type="Node2D" unique_id=325224999]
 script = ExtResource("1_tdwu2")
 
-[node name="Body" type="Node2D" parent="." unique_id=1258666948]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=55184305]
 
-[node name="Sprite" type="Sprite2D" parent="Body" unique_id=55184305]
-
-[node name="AttackArea" type="Area2D" parent="." unique_id=173972582]
-
-[node name="Collision" type="CollisionShape2D" parent="AttackArea" unique_id=1684798246]
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=483748257]

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://ca1q8lslv5hnn"]
+
+[ext_resource type="PackedScene" uid="uid://b3wp8wnprj4en" path="res://weapons/swords/sword_template/sword_template.tscn" id="1_ll2rd"]
+[ext_resource type="Texture2D" uid="uid://dgtnwumhe238i" path="res://assets/old_sword.png" id="2_4ax8k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqs7f"]
+size = Vector2(3.8888888, 22.777779)
+
+[sub_resource type="Animation" id="Animation_h2sh5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7xjgn"]
+resource_name = "attack"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-19, -7), Vector2(10, -6), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -1.3372786, 1.0312874, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qqog0"]
+_data = {
+&"RESET": SubResource("Animation_h2sh5"),
+&"attack": SubResource("Animation_7xjgn")
+}
+
+[node name="WeaponTemplate" unique_id=325224999 instance=ExtResource("1_ll2rd")]
+
+[node name="Sprite" parent="." index="0" unique_id=55184305]
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("2_4ax8k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AttackArea" parent_id_path=PackedInt32Array(1122916117) index="0" unique_id=15209517]
+position = Vector2(-0.5555556, -20)
+shape = SubResource("RectangleShape2D_jqs7f")
+
+[node name="Animation" parent="." index="1" unique_id=483748257]
+libraries/ = SubResource("AnimationLibrary_qqog0")

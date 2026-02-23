@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ksj8tmv6d87i"]
+
+[ext_resource type="Script" uid="uid://b3vyj8j5gh56j" path="res://weapons/physic_item/physic_item.gd" id="1_vc4py"]
+
+[node name="PhysicItem" type="Node2D" unique_id=858406816]
+script = ExtResource("1_vc4py")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=456436070]
+offset = Vector2(0, -16)
+
+[node name="Label" type="Label" parent="." unique_id=1436267974]
+visible = false
+offset_left = -42.0
+offset_right = 46.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 10
+text = "press [E] to collect"
