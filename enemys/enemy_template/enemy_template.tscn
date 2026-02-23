@@ -19,6 +19,8 @@ script = ExtResource("2_c72bf")
 [node name="Collision" type="CollisionShape2D" parent="AttackArea" unique_id=200143248]
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=71602691]
+collision_layer = 0
+collision_mask = 64
 
 [node name="Collision" type="CollisionShape2D" parent="Hitbox" unique_id=2108929496]
 

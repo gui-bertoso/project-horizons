@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://wvbpr20i3glk"]
 
+[ext_resource type="Script" uid="uid://l8nji63dnya0" path="res://player_attack_area/player_attack_area.gd" id="1_lqhlf"]
+
 [node name="AttackArea" type="Area2D" unique_id=1122916117]
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("1_lqhlf")
