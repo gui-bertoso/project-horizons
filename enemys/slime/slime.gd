@@ -34,3 +34,7 @@ func update_animation() -> void:
 			animation_player.play("idle")
 		"chase":
 			animation_player.play("walk")
+		"death":
+			animation_player.play("death")
+			await animation_player.animation_finished
+			queue_free()

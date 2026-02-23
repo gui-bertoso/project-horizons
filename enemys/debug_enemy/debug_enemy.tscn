@@ -6,6 +6,9 @@
 
 [node name="DebugEnemy" unique_id=821678605 instance=ExtResource("1_0boax")]
 script = ExtResource("2_a414r")
+health = 9
 
 [node name="Sprite" parent="Body" parent_id_path=PackedInt32Array(63969425) index="0" unique_id=1262303832]
 texture = ExtResource("3_u403t")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

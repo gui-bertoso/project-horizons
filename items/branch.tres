@@ -1,6 +1,13 @@
-[gd_resource type="Resource" format=3 uid="uid://ctxw5iqekdabs"]
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://ctxw5iqekdabs"]
 
 [ext_resource type="Script" uid="uid://74sgkpl28wa0" path="res://items/item_template/item.gd" id="1_75k33"]
+[ext_resource type="PackedScene" uid="uid://bsuv2nu7dvcr8" path="res://weapons/swords/branch/branch.tscn" id="1_fvvtn"]
+[ext_resource type="Texture2D" uid="uid://cgre8h5v8nem5" path="res://assets/branch.png" id="2_2umqs"]
 
 [resource]
 script = ExtResource("1_75k33")
+item_name = "Branch"
+item_type = "weapon"
+item_class = "mellee"
+item_texture = ExtResource("2_2umqs")
+item_scene = ExtResource("1_fvvtn")

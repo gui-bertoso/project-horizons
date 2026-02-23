@@ -1,6 +1,13 @@
-[gd_resource type="Resource" format=3 uid="uid://c31mo72jti5sq"]
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://c31mo72jti5sq"]
 
+[ext_resource type="PackedScene" uid="uid://byxdjy1edqlvp" path="res://weapons/swords/broken_sword/broken_sword.tscn" id="1_180j7"]
 [ext_resource type="Script" uid="uid://74sgkpl28wa0" path="res://items/item_template/item.gd" id="1_yc7v6"]
+[ext_resource type="Texture2D" uid="uid://cd7v0bxnn1q1" path="res://assets/broken_sword.png" id="2_xrf8x"]
 
 [resource]
 script = ExtResource("1_yc7v6")
+item_name = "BrokenSword"
+item_type = "weapon"
+item_class = "mellee"
+item_texture = ExtResource("2_xrf8x")
+item_scene = ExtResource("1_180j7")
