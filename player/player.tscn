@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://ifny6fsbtsoq" path="res://assets/ball_fx.png" id="3_hx151"]
 [ext_resource type="Script" uid="uid://dy3o46ywsmkab" path="res://player/stats.gd" id="3_ugqs2"]
 [ext_resource type="Script" uid="uid://f8kbi3kieleg" path="res://player/hitbox.gd" id="5_0rvpn"]
+[ext_resource type="Script" uid="uid://dl0h1tfk3elj4" path="res://player/hand_offset.gd" id="6_boad6"]
+[ext_resource type="Script" uid="uid://c5fvfj0iphctg" path="res://player/hand.gd" id="6_g6k8r"]
 
 [sub_resource type="Curve" id="Curve_0rvpn"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.09727633), 0.0, 0.0, 0, 0]
@@ -36,12 +38,12 @@ radius = 7.9998875
 height = 23.99966
 
 [node name="Player" type="CharacterBody2D" unique_id=1238751408]
-position = Vector2(1, 0)
 collision_layer = 4
 collision_mask = 9
 script = ExtResource("1_1l1n4")
 
 [node name="VFX" type="Node2D" parent="." unique_id=548887294]
+position = Vector2(0, -16)
 
 [node name="DashParticles" type="GPUParticles2D" parent="VFX" unique_id=1570169608]
 emitting = false
@@ -52,22 +54,25 @@ speed_scale = 6.85
 process_material = SubResource("ParticleProcessMaterial_wy5t8")
 
 [node name="Body" type="Node2D" parent="." unique_id=1941541804]
+position = Vector2(0, -16)
 
 [node name="Sprite" type="Sprite2D" parent="Body" unique_id=2063626480]
 texture = ExtResource("1_yf0e5")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1698034466]
+position = Vector2(0, -16)
 position_smoothing_enabled = true
 
 [node name="Stats" type="Node" parent="." unique_id=684324900]
 script = ExtResource("3_ugqs2")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1541572880]
-position = Vector2(-1.1920929e-07, 8)
+position = Vector2(0, -8)
 rotation = -1.5654644
 shape = SubResource("CapsuleShape2D_hx151")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1618641056]
+position = Vector2(0, -16)
 collision_layer = 0
 collision_mask = 128
 script = ExtResource("5_0rvpn")
@@ -76,5 +81,13 @@ script = ExtResource("5_0rvpn")
 position = Vector2(-1.1920929e-07, 8)
 rotation = -1.5654644
 shape = SubResource("CapsuleShape2D_hx151")
+
+[node name="HandOffset" type="Node2D" parent="." unique_id=678383999]
+position = Vector2(0, -16)
+script = ExtResource("6_boad6")
+
+[node name="Hand" type="Marker2D" parent="HandOffset" unique_id=1337703164]
+position = Vector2(25, 0)
+script = ExtResource("6_g6k8r")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

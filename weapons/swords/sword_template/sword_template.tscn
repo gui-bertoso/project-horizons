@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://b3wp8wnprj4en"]
 
 [ext_resource type="PackedScene" uid="uid://clamhsh6htufg" path="res://weapons/weapon_template/weapon_template.tscn" id="1_7op0r"]
+[ext_resource type="PackedScene" uid="uid://wvbpr20i3glk" path="res://player_attack_area/player_attack_area.tscn" id="2_lrkrn"]
 
 [node name="WeaponTemplate" unique_id=325224999 instance=ExtResource("1_7op0r")]
+
+[node name="Sprite" parent="." index="0" unique_id=55184305]
+offset = Vector2(0, -16)
+
+[node name="AttackArea" parent="Sprite" index="0" unique_id=1122916117 instance=ExtResource("2_lrkrn")]
