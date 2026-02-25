@@ -86,4 +86,5 @@ shape = SubResource("CapsuleShape2D_xyspl")
 position = Vector2(1, 22)
 shape = SubResource("CapsuleShape2D_vhheo")
 
-[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[node name="FloatDamageSpawn" parent="." index="4" unique_id=559826423]
+position = Vector2(1, -31)

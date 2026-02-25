@@ -5,11 +5,14 @@ func update_animation() -> void:
 	if not animation_player.is_playing():
 		animation_player.play("idle")
 
-func _on_hitbox_area_entered(_area: Area2D) -> void:
+func _on_hitbox_area_entered(area: Area2D) -> void:
 	if Globals.player.global_position.x < global_position.x:
-		scale = Vector2(1, 1)
+		$Body/Sprite.flip_h = false
 	else:
-		scale = Vector2(-1, 1)
+		$Body/Sprite.flip_h = true
 	animation_player.play("hit")
-	await get_tree().create_timer(0.26).timeout
-	scale = Vector2(1, 1)
+	
+	var floating_damage := damage_floating_text_scene.instantiate()
+	floating_damage.set_data(-1 * area.damage)
+	floating_damage.global_position = float_damage_spawn.global_position
+	get_tree().current_scene.add_child(floating_damage)
