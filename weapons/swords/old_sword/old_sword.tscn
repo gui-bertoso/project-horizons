@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b3wp8wnprj4en" path="res://weapons/swords/sword_template/sword_template.tscn" id="1_ll2rd"]
 [ext_resource type="Texture2D" uid="uid://dgtnwumhe238i" path="res://assets/old_sword.png" id="2_4ax8k"]
+[ext_resource type="AudioStream" uid="uid://dcfrbhwe617md" path="res://sounds/sword_attack_4.wav" id="2_qqog0"]
+[ext_resource type="AudioStream" uid="uid://dqptr54gexr87" path="res://sounds/sword_attack_5.wav" id="3_qn2w3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqs7f"]
 size = Vector2(3.8888888, 22.777779)
@@ -32,6 +34,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/AttackArea/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ActionSound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_7xjgn"]
 resource_name = "attack"
@@ -46,7 +72,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-19, -7), Vector2(10, -6), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(-19, -7), Vector2(8.999994, 25), Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -58,7 +84,31 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.6, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, -1.3372786, 1.0312874, 0.0]
+"values": [0.0, -1.3372786, 2.6654034, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/AttackArea/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ActionSound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qqog0"]
@@ -68,6 +118,7 @@ _data = {
 }
 
 [node name="WeaponTemplate" unique_id=325224999 instance=ExtResource("1_ll2rd")]
+action_sounds_list = Array[AudioStreamWAV]([ExtResource("2_qqog0"), ExtResource("3_qn2w3")])
 
 [node name="Sprite" parent="." index="0" unique_id=55184305]
 scale = Vector2(1.8, 1.8)
@@ -76,6 +127,7 @@ texture = ExtResource("2_4ax8k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/AttackArea" parent_id_path=PackedInt32Array(1122916117) index="0" unique_id=15209517]
 position = Vector2(-0.5555556, -20)
 shape = SubResource("RectangleShape2D_jqs7f")
+disabled = true
 
 [node name="Animation" parent="." index="1" unique_id=483748257]
 libraries/ = SubResource("AnimationLibrary_qqog0")

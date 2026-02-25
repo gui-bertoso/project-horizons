@@ -26,3 +26,7 @@ collision_mask = 64
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=760924093]
 position = Vector2(1, 16)
+
+[node name="FloatDamageSpawn" type="Marker2D" parent="." unique_id=559826423]
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

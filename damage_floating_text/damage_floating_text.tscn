@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://3sch8cgg0ait"]
+
+[ext_resource type="Script" uid="uid://da4dl14x41j6h" path="res://damage_floating_text/damage_floating_text.gd" id="1_rj4u4"]
+
+[node name="DamageFloatingText" type="Label" unique_id=389868768]
+offset_right = 22.0
+offset_bottom = 23.0
+script = ExtResource("1_rj4u4")
+increase_color = Color(0, 1, 0, 1)
+decrease_color = Color(1, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=1241860949]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
