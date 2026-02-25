@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dirs5ymm8g58g"]
+
+[ext_resource type="Script" uid="uid://dckqw871jti5u" path="res://main_menu/main_menu.gd" id="1_d3a7t"]
+[ext_resource type="AudioStream" uid="uid://bo458mpdd0ckj" path="res://sounds/menu_music_2.mp3" id="2_d3a7t"]
+
+[node name="MainMenu" type="Control" unique_id=807100648]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d3a7t")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1564686712]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.10249352, 0.10249352, 0.10249352, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1126848503]
+stream = ExtResource("2_d3a7t")
+volume_db = -18.403
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

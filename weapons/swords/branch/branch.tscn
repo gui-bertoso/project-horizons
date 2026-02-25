@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bsuv2nu7dvcr8"]
 
 [ext_resource type="PackedScene" uid="uid://b3wp8wnprj4en" path="res://weapons/swords/sword_template/sword_template.tscn" id="1_8b6m5"]
+[ext_resource type="AudioStream" uid="uid://dcfrbhwe617md" path="res://sounds/sword_attack_4.wav" id="2_4hxqe"]
 [ext_resource type="Texture2D" uid="uid://cgre8h5v8nem5" path="res://assets/branch.png" id="2_dcw2m"]
+[ext_resource type="AudioStream" uid="uid://dqptr54gexr87" path="res://sounds/sword_attack_5.wav" id="3_2sv88"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqs7f"]
 size = Vector2(5.882352, 25.294115)
@@ -92,6 +94,7 @@ _data = {
 }
 
 [node name="WeaponTemplate" unique_id=325224999 instance=ExtResource("1_8b6m5")]
+action_sounds_list = Array[AudioStreamWAV]([ExtResource("2_4hxqe"), ExtResource("3_2sv88")])
 
 [node name="Sprite" parent="." index="0" unique_id=55184305]
 position = Vector2(0, 2.0000002)

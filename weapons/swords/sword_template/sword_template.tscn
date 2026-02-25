@@ -9,3 +9,5 @@
 offset = Vector2(0, -16)
 
 [node name="AttackArea" parent="Sprite" index="0" unique_id=1122916117 instance=ExtResource("2_lrkrn")]
+
+[node name="ActionSound" type="AudioStreamPlayer2D" parent="." index="2" unique_id=235061278]
