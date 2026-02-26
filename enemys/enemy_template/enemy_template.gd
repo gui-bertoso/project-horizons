@@ -8,6 +8,8 @@ class_name EnemyTemplate
 
 @onready var damage_floating_text_scene: PackedScene = preload("res://damage_floating_text/damage_floating_text.tscn")
 
+@export var health: int = 12
+
 var player_reference: Player
 @onready var detection_distance: float = 200.0
 
@@ -35,4 +37,8 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	floating_damage.set_data(-1 * area.damage)
 	floating_damage.global_position = float_damage_spawn.global_position
 	get_tree().current_scene.add_child(floating_damage)
+	
+	health -= area.damage
+	if health <= 0:
+		current_state = "dead"
 	

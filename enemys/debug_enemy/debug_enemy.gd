@@ -1,8 +1,6 @@
 extends EnemyTemplate
 class_name DebugEnemy
 
-@export var health: int = 9
-
 func update_state(_delta: float) -> void:
 	match current_state:
 		"":

@@ -24,6 +24,9 @@ func apply_state() -> void:
 			var direction: Vector2 = (player_reference.global_position - global_position).normalized()
 			if direction:
 				velocity = direction * move_speed
+		"dead":
+			velocity.x = move_toward(velocity.x, 0.0, move_speed)
+			velocity.y = move_toward(velocity.y, 0.0, move_speed)
 			
 
 func update_animation() -> void:
@@ -34,7 +37,7 @@ func update_animation() -> void:
 			animation_player.play("idle")
 		"chase":
 			animation_player.play("walk")
-		"death":
-			animation_player.play("death")
+		"dead":
+			animation_player.play("dead")
 			await animation_player.animation_finished
 			queue_free()

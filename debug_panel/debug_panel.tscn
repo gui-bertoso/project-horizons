@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c8kww05s7ck70"]
 
 [ext_resource type="Script" uid="uid://c3q1qlb27tfb0" path="res://debug_panel/debug_panel.gd" id="1_73o1o"]
+[ext_resource type="Script" uid="uid://67nqn5ms05sr" path="res://debug_panel/camera_2d.gd" id="2_a7b30"]
 
 [node name="DebugPanel" type="Control" unique_id=1398223107 node_paths=PackedStringArray("data_0", "data_1", "data_2", "data_3", "data_4", "data_5", "data_6", "data_7", "data_8")]
 layout_mode = 3
@@ -22,6 +23,7 @@ data_7 = NodePath("ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxCon
 data_8 = NodePath("ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer7/Label3")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=334558134]
+visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = 12.0
@@ -220,3 +222,20 @@ text = ":"
 [node name="Label3" type="Label" parent="ColorRect/VBoxContainer2/VBoxContainer2/VBoxContainer/HBoxContainer7" unique_id=196086795]
 layout_mode = 2
 text = "value"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2097683466]
+visible = false
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=260555435]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=1336358795]
+size = Vector2i(1152, 648)
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1445420146]
+script = ExtResource("2_a7b30")
