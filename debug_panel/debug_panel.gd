@@ -13,7 +13,32 @@ extends Control
 var update_delay: float = 0.2
 var update_countdown: float = 0.0
 
+var active: bool = false
+
+func _ready() -> void:
+	Globals.set_debug_mode.connect(set_visibility)
+
+func set_visibility(value: bool) -> void:
+	active = value
+	call_deferred("set_debug")
+	if active:
+		if not $ColorRect.visible:
+			$ColorRect.visible = true
+	else:
+		if $ColorRect.visible:
+			$ColorRect.visible = false
+
+func set_debug()-> void:
+	get_tree().debug_collisions_hint = active
+	get_tree().debug_paths_hint = active
+	$CanvasLayer.visible = active
+
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("debug"):
+		Globals.debug_mode = !Globals.debug_mode
+		Globals.emit_signal("set_debug_mode", Globals.debug_mode)
+	
+	if !active: return
 	update_data(delta)
 	update_countdown -= delta
 	if update_countdown <= 0.0:
