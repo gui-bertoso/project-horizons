@@ -1,10 +1,10 @@
-# 🧠 project horizons
+# project horizons
 
 experimental procedural game focused on systems, architecture and world generation.
 
 ---
 
-## 🚀 features
+## features
 
 - procedural systems experimentation  
 - modular architecture  
@@ -12,13 +12,13 @@ experimental procedural game focused on systems, architecture and world generati
 
 ---
 
-## 🎯 goal
+## goal
 
 explore scalable game systems and procedural design patterns.
 
 ---
 
-## ⚙️ stack
+## stack
 
 - godot
 - gdscript / c#
@@ -26,6 +26,6 @@ explore scalable game systems and procedural design patterns.
 
 ---
 
-## 📌 status
+## status
 
 active development / experimental
